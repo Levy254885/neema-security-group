@@ -7,7 +7,6 @@ import Industries from "@/components/sections/Industries";
 import Standards from "@/components/sections/Standards";
 import About from "@/components/sections/About";
 import CTA from "@/components/sections/CTA";
-import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -23,7 +22,6 @@ export default function Home() {
         <Standards />
         <About />
         <CTA />
-        <Contact />
       </main>
       <Footer />
     </>
