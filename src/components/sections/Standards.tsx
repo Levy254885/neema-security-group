@@ -38,7 +38,7 @@ export default function Standards() {
             { label: "Operational Consistency", value: "Daily" },
             { label: "Client Accountability", value: "Always" },
             { label: "Structured Procedures", value: "Standard" },
-          ].map((item, i) => (
+          ].map((item) => (
             <div
               key={item.label}
               className="p-6 border border-charcoal/10 hover:border-gold/30 transition-colors"
