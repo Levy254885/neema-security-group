@@ -1,20 +1,11 @@
 import Link from "next/link";
+import { services } from "@/data/services";
 
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#industries", label: "Industries" },
-  { href: "#contact", label: "Contact" },
-];
-
-const serviceLinks = [
-  "Manned Guarding",
-  "Corporate Security",
-  "Residential Security",
-  "Event Security",
-  "Access Control",
-  "Security Consulting",
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Footer() {
@@ -22,7 +13,6 @@ export default function Footer() {
     <footer className="bg-dark-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-9 h-9 rounded-full border-2 border-gold flex items-center justify-center">
@@ -40,7 +30,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Navigation */}
           <div>
             <h3 className="text-xs tracking-[0.2em] text-gold uppercase font-medium mb-4">
               Navigation
@@ -59,29 +48,38 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="text-xs tracking-[0.2em] text-gold uppercase font-medium mb-4">
               Services
             </h3>
             <ul className="space-y-2">
-              {serviceLinks.map((service) => (
-                <li key={service}>
-                  <span className="text-sm text-white/70">{service}</span>
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    href={`/services/${s.slug}`}
+                    className="text-sm text-white/70 hover:text-gold transition-colors"
+                  >
+                    {s.title}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact note */}
           <div>
             <h3 className="text-xs tracking-[0.2em] text-gold uppercase font-medium mb-4">
               Get in Touch
             </h3>
-            <p className="text-sm text-white/70 leading-relaxed">
-              For enquiries and security assessments, please use the contact
-              form or request protection above.
+            <p className="text-sm text-white/70 leading-relaxed mb-4">
+              For enquiries and security assessments, use the contact form or
+              request protection.
             </p>
+            <Link
+              href="/contact"
+              className="inline-flex text-sm font-semibold text-gold hover:text-light-gold transition-colors"
+            >
+              Contact Us →
+            </Link>
           </div>
         </div>
 
