@@ -40,13 +40,13 @@ export default function Services() {
             What We Offer
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark-navy leading-tight">
-            Security Solutions
+            Our Security
             <br />
-            <span className="text-navy">Tailored to Your Needs</span>
+            <span className="text-navy">Services</span>
           </h2>
           <p className="mt-5 text-charcoal/70 text-lg max-w-xl">
-            Professional protection designed around the people, properties and
-            operations that matter most.
+            Protection built around the people, properties and work that
+            matter to you.
           </p>
         </motion.div>
 
