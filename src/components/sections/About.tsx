@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const values = [
-  { title: "Vigilance", description: "Constant awareness and readiness." },
-  { title: "Integrity", description: "Honest conduct in every interaction." },
+  { title: "Vigilance", description: "Staying alert on every shift." },
+  { title: "Integrity", description: "Honest work, no shortcuts." },
   {
     title: "Professionalism",
-    description: "Standards that never slip.",
+    description: "Standards we hold every day.",
   },
   {
     title: "Accountability",
-    description: "Clear ownership of outcomes.",
+    description: "We own the outcome of our work.",
   },
 ];
 
@@ -21,7 +21,6 @@ export default function About() {
     <section id="about" className="relative py-24 lg:py-32 bg-off-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -31,19 +30,17 @@ export default function About() {
           >
             <div className="relative h-[420px] lg:h-[520px]">
               <Image
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop"
                 alt="Neema Security Group professional"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            {/* Overlapping accent */}
             <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-navy hidden lg:block" />
             <div className="absolute -bottom-3 -right-3 w-48 h-48 border-2 border-gold hidden lg:block" />
           </motion.div>
 
-          {/* Content */}
           <div>
             <motion.span
               initial={{ opacity: 0, y: 10 }}
@@ -60,7 +57,7 @@ export default function About() {
               transition={{ delay: 0.1 }}
               className="mt-3 text-3xl sm:text-4xl font-semibold text-dark-navy leading-tight"
             >
-              Security Is More Than Presence.
+              Security Is More Than a Uniform.
               <br />
               It Is Confidence.
             </motion.h2>
@@ -71,10 +68,9 @@ export default function About() {
               transition={{ delay: 0.2 }}
               className="mt-6 text-charcoal/70 leading-relaxed"
             >
-              Neema Security Group exists to deliver professional protection
-              that clients can rely on. We believe effective security combines
-              visible presence with quiet discipline—people who are trained,
-              supervised and accountable.
+              Neema Security Group provides professional protection that clients
+              can rely on. Good security means trained people on site, proper
+              supervision and clear accountability.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -83,9 +79,9 @@ export default function About() {
               transition={{ delay: 0.3 }}
               className="mt-4 text-charcoal/70 leading-relaxed"
             >
-              Our approach is straightforward: understand the environment, place
-              the right personnel, maintain clear communication, and uphold the
-              standards that earn long-term trust.
+              Our method is simple. Understand the site, put the right people
+              in place, keep communication open and hold the standards that
+              build lasting trust.
             </motion.p>
 
             <div className="mt-10 grid grid-cols-2 gap-6">

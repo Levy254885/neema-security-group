@@ -47,7 +47,7 @@ export default function Approach() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="mt-4 text-3xl sm:text-4xl font-semibold leading-tight"
             >
-              Protection Built Around Your Reality.
+              Protection Built Around Your Reality
             </motion.h2>
 
             <motion.p
@@ -57,9 +57,9 @@ export default function Approach() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-6 text-white/70 leading-relaxed"
             >
-              Neema takes a disciplined and client-focused approach. We listen
-              first, understand the unique risks of your environment, and design
-              protection that fits your operations—not the other way around.
+              We listen first. We study the risks on your site and design
+              protection that fits how you actually operate, not a one size
+              fits all template.
             </motion.p>
 
             <div className="mt-10 space-y-8">
@@ -76,8 +76,8 @@ export default function Approach() {
                 <div>
                   <h3 className="font-semibold text-lg">Disciplined Personnel</h3>
                   <p className="mt-1 text-sm text-white/60">
-                    Carefully selected and continuously trained professionals
-                    who embody vigilance and integrity in every shift.
+                    Carefully selected and trained professionals who show up
+                    ready and carry themselves with integrity every shift.
                   </p>
                 </div>
               </motion.div>
@@ -94,11 +94,12 @@ export default function Approach() {
                 </span>
                 <div>
                   <h3 className="font-semibold text-lg">
-                    Client-Focused Operations
+                    Client Focused Operations
                   </h3>
                   <p className="mt-1 text-sm text-white/60">
                     Clear communication, reliable reporting and security plans
-                    that adapt to the realities of your business or property.
+                    that match the day to day reality of your business or
+                    property.
                   </p>
                 </div>
               </motion.div>
