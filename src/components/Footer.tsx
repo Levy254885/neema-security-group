@@ -23,7 +23,7 @@ export default function Footer() {
                 alt="Neema Security Group"
                 width={180}
                 height={56}
-                className="h-11 w-auto"
+                className="h-11 w-auto brightness-0 invert"
               />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed">

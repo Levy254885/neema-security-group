@@ -59,7 +59,7 @@ export default function Navbar() {
               alt="Neema Security Group"
               width={200}
               height={64}
-              className="h-10 sm:h-12 w-auto"
+              className="h-10 sm:h-12 w-auto brightness-0 invert"
               priority
             />
           </Link>

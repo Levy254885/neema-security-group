@@ -61,7 +61,7 @@ export default function Hero() {
             alt="Neema Security Group"
             width={320}
             height={100}
-            className="h-16 sm:h-20 w-auto mx-auto drop-shadow-lg"
+            className="h-16 sm:h-20 w-auto mx-auto drop-shadow-lg brightness-0 invert"
             priority
           />
         </motion.div>
