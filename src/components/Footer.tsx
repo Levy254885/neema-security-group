@@ -72,8 +72,8 @@ export default function Footer() {
               Get in Touch
             </h3>
             <p className="text-sm text-white/70 leading-relaxed mb-4">
-              For enquiries and security assessments, use the contact form or
-              request protection.
+              For enquiries or a security assessment, get in touch through the
+              contact form.
             </p>
             <Link
               href="/contact"

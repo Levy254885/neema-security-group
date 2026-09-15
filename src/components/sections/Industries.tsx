@@ -7,32 +7,32 @@ const industries = [
   {
     number: "01",
     title: "Corporate Offices",
-    description: "Secure environments for business operations and staff.",
+    description: "Safe workplaces for staff and daily operations.",
   },
   {
     number: "02",
     title: "Residential Estates",
-    description: "Discreet protection for homes and gated communities.",
+    description: "Quiet protection for homes and gated communities.",
   },
   {
     number: "03",
-    title: "Retail & Commercial",
-    description: "Visible deterrence and access control for commercial spaces.",
+    title: "Retail and Commercial",
+    description: "Presence and access control for commercial spaces.",
   },
   {
     number: "04",
     title: "Construction Sites",
-    description: "Asset and perimeter security for active project sites.",
+    description: "Perimeter and asset security on active project sites.",
   },
   {
     number: "05",
     title: "Institutions",
-    description: "Reliable coverage for schools, clinics and public facilities.",
+    description: "Steady coverage for schools, clinics and public facilities.",
   },
   {
     number: "06",
-    title: "Events & Functions",
-    description: "Professional event security with controlled access.",
+    title: "Events and Functions",
+    description: "Event coverage with controlled access.",
   },
 ];
 
@@ -44,7 +44,6 @@ export default function Industries() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
-          {/* Left editorial column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -55,15 +54,15 @@ export default function Industries() {
               Sectors We Protect
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-dark-navy leading-tight">
-              Trusted across
+              We work across
               <br />
-              environments that
+              sites that need
               <br />
-              demand discipline.
+              real discipline.
             </h2>
             <p className="mt-5 text-charcoal/70 leading-relaxed">
-              From boardrooms to residential gates, Neema delivers consistent
-              professional presence tailored to the context of each site.
+              From office buildings to residential gates, we provide steady
+              professional presence shaped around each site.
             </p>
 
             <div className="mt-8 relative h-64 hidden lg:block">
@@ -78,7 +77,6 @@ export default function Industries() {
             </div>
           </motion.div>
 
-          {/* Right - numbered list with navy panels */}
           <div className="lg:col-span-8 grid sm:grid-cols-2 gap-4">
             {industries.map((item, index) => (
               <motion.div
@@ -91,11 +89,7 @@ export default function Industries() {
                   index % 3 === 0 ? "bg-navy text-white" : "bg-white"
                 }`}
               >
-                <span
-                  className={`text-xs font-semibold tracking-widest ${
-                    index % 3 === 0 ? "text-gold" : "text-gold"
-                  }`}
-                >
+                <span className="text-xs font-semibold tracking-widest text-gold">
                   {item.number}
                 </span>
                 <h3
