@@ -17,17 +17,17 @@ export const services: Service[] = [
     title: "Manned Guarding",
     shortTitle: "Manned Guarding",
     description:
-      "Professional security personnel for commercial, residential and institutional environments.",
+      "Trained officers on site for commercial, residential and institutional properties.",
     longDescription:
-      "Our manned guarding service places trained, disciplined officers at your site. They provide a visible deterrent, control access, monitor activity and respond professionally to incidents. Every officer is selected for presence, reliability and the ability to represent Neema to a high standard.",
+      "We place disciplined officers at your site. They keep a visible presence, control who comes in, watch the grounds and handle incidents when they arise. Every officer is chosen for reliability and the ability to represent Neema well.",
     image:
       "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1600&auto=format&fit=crop",
     features: [
-      "Visible professional presence",
-      "Access control and visitor management",
-      "Patrol and observation routines",
-      "Incident reporting and escalation",
-      "Shift handover discipline",
+      "Visible presence on site",
+      "Access and visitor control",
+      "Regular patrols",
+      "Incident reporting",
+      "Proper shift handovers",
     ],
     idealFor: [
       "Commercial buildings",
@@ -41,17 +41,16 @@ export const services: Service[] = [
     number: "02",
     title: "Corporate Security",
     shortTitle: "Corporate Security",
-    description:
-      "Security solutions designed for offices, businesses and corporate facilities.",
+    description: "Security for offices, businesses and corporate facilities.",
     longDescription:
-      "Corporate environments require discreet yet effective protection. We design and deliver security that supports your operations, protects people and assets, and maintains a professional atmosphere for clients and staff.",
+      "Offices need protection that does not get in the way of work. We provide security that keeps people and assets safe while maintaining a professional environment for staff and visitors.",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
     features: [
-      "Reception and lobby presence",
-      "Access and visitor control",
+      "Lobby and reception coverage",
+      "Access control",
       "Internal patrols",
-      "After-hours security",
+      "After hours security",
       "Coordination with management",
     ],
     idealFor: [
@@ -66,17 +65,16 @@ export const services: Service[] = [
     number: "03",
     title: "Residential Security",
     shortTitle: "Residential Security",
-    description:
-      "Protection solutions for homes, estates and residential communities.",
+    description: "Protection for homes, estates and residential communities.",
     longDescription:
-      "Residential security demands both professionalism and discretion. Our officers protect residents and property while maintaining a respectful, low-profile presence that fits the character of the community.",
+      "Home security needs both skill and discretion. Our officers protect residents and property while remaining respectful and low profile within the community.",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
     features: [
       "Gate and perimeter control",
       "Patrol of common areas",
-      "Visitor verification",
-      "Emergency response readiness",
+      "Visitor checks",
+      "Ready emergency response",
       "Resident liaison",
     ],
     idealFor: [
@@ -91,17 +89,16 @@ export const services: Service[] = [
     number: "04",
     title: "Event Security",
     shortTitle: "Event Security",
-    description:
-      "Controlled, professional security coverage for events and gatherings.",
+    description: "Professional coverage for events and gatherings.",
     longDescription:
-      "Events require careful planning and calm execution. We provide trained teams for access control, crowd management, VIP protection and overall site security so organisers can focus on the experience.",
+      "Events need careful planning and calm execution. We provide teams for access control, crowd management and site security so organisers can focus on the event itself.",
     image:
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
     features: [
       "Access and ticket control",
       "Crowd management",
-      "VIP and stage security",
-      "Entry search and screening",
+      "VIP coverage",
+      "Entry screening",
       "Coordination with organisers",
     ],
     idealFor: [
@@ -116,24 +113,23 @@ export const services: Service[] = [
     number: "05",
     title: "Access Control",
     shortTitle: "Access Control",
-    description:
-      "Structured monitoring and controlled access for properties and facilities.",
+    description: "Controlled entry for properties and facilities.",
     longDescription:
-      "Effective access control reduces risk at the point of entry. We combine trained personnel with clear procedures to manage who enters, when, and under what conditions — creating accountability and a strong first line of protection.",
+      "Good access control starts at the gate. We use trained personnel and clear procedures so you know who enters, when they enter, and under what conditions.",
     image:
       "https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=1600&auto=format&fit=crop",
     features: [
       "Visitor registration",
       "Badge and pass systems",
       "Vehicle control",
-      "Delivery and contractor management",
-      "Audit trails and reporting",
+      "Contractor management",
+      "Clear records and reporting",
     ],
     idealFor: [
       "Office complexes",
       "Warehouses",
       "Restricted facilities",
-      "Mixed-use developments",
+      "Mixed use developments",
     ],
   },
   {
@@ -141,18 +137,17 @@ export const services: Service[] = [
     number: "06",
     title: "Security Consulting",
     shortTitle: "Security Consulting",
-    description:
-      "Risk-aware security planning tailored to individual client requirements.",
+    description: "Practical security planning based on your real risks.",
     longDescription:
-      "Good security starts with understanding the environment. Our consulting service helps clients identify risks, design practical protection plans and implement measures that fit their operations and budget.",
+      "Solid security begins with understanding the site. We help clients identify risks, design workable plans and put measures in place that fit their operations and budget.",
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
     features: [
       "Site risk assessment",
       "Security plan design",
       "Procedure development",
-      "Training recommendations",
-      "Ongoing review support",
+      "Training guidance",
+      "Ongoing review",
     ],
     idealFor: [
       "New developments",
