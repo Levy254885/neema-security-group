@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/data/services";
 
+const LOGO = "/BackgroundEraser_20260915_110802894.png";
+
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -17,11 +19,11 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
               <Image
-                src="/logo.svg"
+                src={LOGO}
                 alt="Neema Security Group"
-                width={160}
-                height={50}
-                className="h-10 w-auto"
+                width={180}
+                height={56}
+                className="h-11 w-auto"
               />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed">

@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
+const LOGO = "/BackgroundEraser_20260915_110802894.png";
+
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -55,11 +57,11 @@ export default function Hero() {
           className="mb-6 sm:mb-8"
         >
           <Image
-            src="/logo.svg"
+            src={LOGO}
             alt="Neema Security Group"
-            width={280}
-            height={90}
-            className="h-14 sm:h-16 w-auto mx-auto drop-shadow-lg"
+            width={320}
+            height={100}
+            className="h-16 sm:h-20 w-auto mx-auto drop-shadow-lg"
             priority
           />
         </motion.div>
