@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -45,25 +46,20 @@ export default function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           solid
-            ? "bg-dark-navy/95 backdrop-blur-md shadow-lg py-3"
-            : "bg-transparent py-5"
+            ? "bg-dark-navy/95 backdrop-blur-md shadow-lg py-2.5"
+            : "bg-transparent py-4"
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-full border-2 border-gold flex items-center justify-center">
-              <span className="text-gold font-bold text-sm tracking-tight">
-                NS
-              </span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-semibold tracking-wide text-sm text-white">
-                NEEMA
-              </span>
-              <span className="text-[10px] tracking-[0.2em] text-gold uppercase">
-                Security Group
-              </span>
-            </div>
+          <Link href="/" className="flex items-center shrink-0">
+            <Image
+              src="/logo.png"
+              alt="Neema Security Group"
+              width={180}
+              height={56}
+              className="h-10 sm:h-11 w-auto"
+              priority
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
