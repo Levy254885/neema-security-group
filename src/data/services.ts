@@ -21,7 +21,7 @@ export const services: Service[] = [
     longDescription:
       "Our manned guarding service places trained, disciplined officers at your site. They provide a visible deterrent, control access, monitor activity and respond professionally to incidents. Every officer is selected for presence, reliability and the ability to represent Neema to a high standard.",
     image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1600&auto=format&fit=crop",
     features: [
       "Visible professional presence",
       "Access control and visitor management",
@@ -46,7 +46,7 @@ export const services: Service[] = [
     longDescription:
       "Corporate environments require discreet yet effective protection. We design and deliver security that supports your operations, protects people and assets, and maintains a professional atmosphere for clients and staff.",
     image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
     features: [
       "Reception and lobby presence",
       "Access and visitor control",
@@ -96,7 +96,7 @@ export const services: Service[] = [
     longDescription:
       "Events require careful planning and calm execution. We provide trained teams for access control, crowd management, VIP protection and overall site security so organisers can focus on the experience.",
     image:
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
     features: [
       "Access and ticket control",
       "Crowd management",
@@ -121,7 +121,7 @@ export const services: Service[] = [
     longDescription:
       "Effective access control reduces risk at the point of entry. We combine trained personnel with clear procedures to manage who enters, when, and under what conditions — creating accountability and a strong first line of protection.",
     image:
-      "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=1600&auto=format&fit=crop",
     features: [
       "Visitor registration",
       "Badge and pass systems",
