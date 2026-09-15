@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
               <Image
-                src="/logo.png"
+                src="/logo.svg"
                 alt="Neema Security Group"
                 width={160}
                 height={50}

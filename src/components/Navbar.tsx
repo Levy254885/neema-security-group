@@ -53,7 +53,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <Link href="/" className="flex items-center shrink-0">
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="Neema Security Group"
               width={180}
               height={56}
