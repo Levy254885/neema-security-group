@@ -55,7 +55,7 @@ export default function Hero() {
           className="mb-6 sm:mb-8"
         >
           <Image
-            src="/logo.png"
+            src="/logo.svg"
             alt="Neema Security Group"
             width={280}
             height={90}
