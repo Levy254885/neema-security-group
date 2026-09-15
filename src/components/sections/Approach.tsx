@@ -7,7 +7,6 @@ export default function Approach() {
   return (
     <section className="relative py-0 overflow-hidden">
       <div className="grid lg:grid-cols-2 min-h-[600px]">
-        {/* Left - Image */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -16,20 +15,17 @@ export default function Approach() {
           className="relative h-[400px] lg:h-auto"
         >
           <Image
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop"
-            alt="Professional security officer on duty"
+            src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1600&auto=format&fit=crop"
+            alt="Professional security monitoring and control"
             fill
             className="object-cover object-center"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-dark-navy/20" />
-          {/* Angular overlay */}
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-navy to-transparent" />
         </motion.div>
 
-        {/* Right - Content */}
         <div className="relative bg-navy text-white flex items-center">
-          {/* Gold geometric accent */}
           <div className="absolute top-0 left-0 w-1 h-full bg-gold" />
           <div className="absolute -top-10 -right-10 w-40 h-40 border border-gold/20 rotate-45 pointer-events-none" />
 
