@@ -8,28 +8,28 @@ const features = [
     number: "01",
     title: "Professional Personnel",
     description:
-      "Our teams are selected for discipline, presence and reliability. Every officer represents the Neema standard.",
+      "We pick our teams for discipline, presence and reliability. Every officer is expected to meet the Neema standard.",
     icon: Users,
   },
   {
     number: "02",
     title: "Disciplined Operations",
     description:
-      "Structured procedures, clear reporting and consistent execution across every assignment.",
+      "Clear procedures, proper reporting and consistent work on every assignment.",
     icon: Shield,
   },
   {
     number: "03",
     title: "Responsive Security",
     description:
-      "Prepared to adapt. We respond with clarity and professionalism when situations demand it.",
+      "When something happens, our teams respond with calm and professionalism.",
     icon: Clock,
   },
   {
     number: "04",
     title: "Client Trust",
     description:
-      "We earn confidence through transparency, accountability and results that speak for themselves.",
+      "We earn trust through honesty, accountability and results you can see.",
     icon: HeartHandshake,
   },
 ];
@@ -40,7 +40,6 @@ export default function WhyNeema() {
       id="why-neema"
       className="relative py-24 lg:py-32 bg-dark-navy text-white overflow-hidden"
     >
-      {/* Subtle geometric accents */}
       <div className="absolute top-20 right-0 w-64 h-64 border border-gold/10 rotate-12 pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-32 h-32 bg-gold/5 rotate-45 pointer-events-none" />
 

@@ -16,13 +16,13 @@ export default function Standards() {
             Professional Standards
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-dark-navy">
-            Our Commitment to Professional Standards
+            How We Work
           </h2>
           <p className="mt-5 text-charcoal/70 leading-relaxed">
-            Every Neema assignment is guided by clear principles: personnel
-            discipline, operational consistency, professionalism, client
-            accountability and structured security procedures. We maintain high
-            standards so our clients can focus on what matters most to them.
+            Every assignment runs on the same principles: disciplined personnel,
+            consistent operations, professionalism, clear accountability and
+            structured procedures. We hold these standards so our clients can
+            focus on their own work.
           </p>
         </motion.div>
 
@@ -50,13 +50,6 @@ export default function Standards() {
             </div>
           ))}
         </motion.div>
-
-        {/* Placeholder for future certifications */}
-        <div className="mt-12 text-center">
-          <p className="text-xs text-charcoal/40 tracking-wide">
-            Certification and accreditation details available upon request.
-          </p>
-        </div>
       </div>
     </section>
   );

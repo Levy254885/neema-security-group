@@ -36,7 +36,7 @@ export default function CTA() {
             transition={{ delay: 0.1 }}
             className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold text-white max-w-3xl mx-auto leading-tight"
           >
-            Does Your Business Need Protection?
+            Need Protection for Your Property or Business?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -45,8 +45,8 @@ export default function CTA() {
             transition={{ delay: 0.2 }}
             className="mt-5 text-white/70 text-lg max-w-xl mx-auto"
           >
-            Let’s discuss a security solution built around your people, property
-            and operational needs.
+            Tell us about your site and we will put together a security plan
+            that fits your people, property and day to day operations.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ export default function CTA() {
               href="/contact"
               className="inline-flex items-center px-8 py-3.5 border border-white/40 text-white text-sm font-semibold tracking-wide uppercase hover:bg-white/10 transition-all duration-300"
             >
-              Contact Neema
+              Contact Us
             </Link>
           </motion.div>
         </div>
