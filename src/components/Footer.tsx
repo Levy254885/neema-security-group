@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { services } from "@/data/services";
 
 const navLinks = [
@@ -14,17 +15,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-full border-2 border-gold flex items-center justify-center">
-                <span className="text-gold font-bold text-sm">NS</span>
-              </div>
-              <div>
-                <div className="font-semibold tracking-wide text-sm">NEEMA</div>
-                <div className="text-[10px] tracking-[0.2em] text-gold uppercase">
-                  Security Group
-                </div>
-              </div>
-            </div>
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/logo.png"
+                alt="Neema Security Group"
+                width={160}
+                height={50}
+                className="h-10 w-auto"
+              />
+            </Link>
             <p className="text-sm text-white/60 leading-relaxed">
               Vigilance. Integrity. Protection.
             </p>
