@@ -2,49 +2,46 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section className="bg-charcoal text-white py-20 lg:py-28">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+    <section className="bg-green text-white">
+      <div className="max-w-md mx-auto px-6 py-14 text-center">
         <motion.h2
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-[1.2]"
-        >
-          Let&apos;s Build a Security Solution for You
-        </motion.h2>
-        <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="mt-5 text-white/70 leading-relaxed max-w-lg mx-auto"
+          className="text-lg sm:text-xl font-bold uppercase tracking-[0.1em]"
         >
-          Tell us about your organisation, location and security requirements.
-          We will put together a practical plan around your needs.
+          Need Protection?
+        </motion.h2>
+        <div className="flex items-center justify-center gap-2 mt-4 mb-5">
+          <span className="w-1.5 h-1.5 rounded-full bg-white" />
+          <span className="w-1.5 h-1.5 rounded-full bg-white" />
+          <span className="w-1.5 h-1.5 rounded-full bg-white" />
+        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.08 }}
+          className="text-sm text-white/95 leading-relaxed"
+        >
+          Tell us about your site and we will put together a security plan that
+          fits your people, property and operations.
         </motion.p>
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.18 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3"
+          transition={{ delay: 0.12 }}
+          className="mt-7"
         >
           <Link
             href="/contact"
-            className="group inline-flex items-center justify-center gap-2 min-w-[200px] px-7 py-3.5 bg-green text-white text-xs font-bold tracking-[0.12em] uppercase hover:bg-green-light transition-colors"
+            className="inline-flex items-center justify-center px-9 py-2.5 border border-white text-white text-[11px] font-bold tracking-[0.15em] uppercase hover:bg-white hover:text-green transition-colors"
           >
-            Request a Free Quote
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center min-w-[140px] px-7 py-3.5 border border-white/40 text-white text-xs font-bold tracking-[0.12em] uppercase hover:bg-white/10 transition-colors"
-          >
-            Contact Us
+            Request Protection
           </Link>
         </motion.div>
       </div>
