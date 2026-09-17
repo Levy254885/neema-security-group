@@ -1,47 +1,37 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 export default function Careers() {
   return (
-    <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
+    <section className="relative py-16 sm:py-20 overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2000&auto=format&fit=crop"
-          alt="Join the Neema Security team"
+          alt="Careers at Neema Security"
           fill
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/55" />
       </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+      <div className="relative max-w-[1200px] mx-auto px-4 text-center">
+        <h2 className="text-[22px] sm:text-[28px] font-bold text-white">
+          Careers at Neema
+        </h2>
+        <p className="mt-3 text-[14px] text-white/90 max-w-md mx-auto leading-relaxed">
+          Join a team that values discipline, reliability and service. Browse
+          openings and find where you belong.
+        </p>
+        <Link
+          href="/contact"
+          className="mt-6 inline-flex items-center gap-1.5 px-6 py-3 bg-red text-white text-[13px] font-semibold hover:bg-red-dark transition-colors"
         >
-          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-green-muted mb-3">
-            Careers
-          </p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight max-w-xl mx-auto">
-            Join Our Security Team
-          </h2>
-          <p className="mt-4 text-sm sm:text-base text-white/85 max-w-md mx-auto leading-relaxed">
-            We look for disciplined, reliable people who take pride in protecting
-            others. If that describes you, we would like to hear from you.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-7 inline-flex items-center gap-2 px-7 py-3.5 bg-green text-white text-[12px] font-bold uppercase tracking-[0.1em] hover:bg-green-dark transition-colors"
-          >
-            View Opportunities
-            <ChevronRight size={16} strokeWidth={2.5} />
-          </Link>
-        </motion.div>
+          Find Your Future
+          <ChevronRight size={16} strokeWidth={2.5} />
+        </Link>
       </div>
     </section>
   );
