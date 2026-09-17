@@ -6,10 +6,12 @@
   --green-deep: #0A2E22;
   --green-light: #2D8A5E;
   --green-muted: #E8F2EC;
-  --white: #FFFFFF;
-  --off-white: #F7F8F6;
+  --black: #0D0D0D;
   --charcoal: #1A1A1A;
   --gray: #5A5A5A;
+  --gray-light: #8A8A8A;
+  --white: #FFFFFF;
+  --off-white: #F7F8F6;
   --background: #FFFFFF;
   --foreground: #1A1A1A;
   --navy: var(--green-dark);
@@ -24,34 +26,31 @@
   --color-green-deep: var(--green-deep);
   --color-green-light: var(--green-light);
   --color-green-muted: var(--green-muted);
+  --color-black: var(--black);
+  --color-charcoal: var(--charcoal);
+  --color-gray: var(--gray);
+  --color-gray-light: var(--gray-light);
+  --color-off-white: var(--off-white);
   --color-navy: var(--navy);
   --color-dark-navy: var(--dark-navy);
   --color-gold: var(--gold);
   --color-light-gold: var(--light-gold);
-  --color-off-white: var(--off-white);
-  --color-charcoal: var(--charcoal);
-  --color-gray: var(--gray);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -59,12 +58,5 @@ body {
   }
 }
 
-::selection {
-  background-color: var(--green);
-  color: white;
-}
-
-:focus-visible {
-  outline: 2px solid var(--green);
-  outline-offset: 2px;
-}
+::selection { background-color: var(--green); color: white; }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
