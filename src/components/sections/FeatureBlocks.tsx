@@ -23,36 +23,34 @@ const blocks = [
 
 export default function FeatureBlocks() {
   return (
-    <section className="bg-white py-10 sm:py-14">
-      <div className="max-w-lg mx-auto px-4 sm:px-6 space-y-12">
+    <section className="bg-white py-10 sm:py-12">
+      <div className="max-w-md mx-auto px-4 space-y-10">
         {blocks.map((block, i) => (
           <motion.article
             key={block.title}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
           >
             <Link href={block.href} className="block group">
               <div className="relative">
-                <div className="relative h-56 sm:h-64 overflow-hidden">
+                <div className="relative h-52 sm:h-56 overflow-hidden">
                   <Image
                     src={block.image}
                     alt={block.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    sizes="(max-width: 640px) 100vw, 512px"
+                    sizes="(max-width: 640px) 100vw, 448px"
                   />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 sm:right-auto">
-                  <span className="inline-block bg-green text-white text-xs sm:text-sm font-bold tracking-[0.12em] uppercase px-5 py-3">
+                <div className="absolute bottom-0 left-0">
+                  <span className="inline-block bg-green text-white text-[11px] sm:text-xs font-bold tracking-[0.12em] uppercase px-4 py-2.5">
                     {block.title}
                   </span>
                 </div>
               </div>
-              <p className="mt-5 text-sm text-gray leading-relaxed px-1">
-                {block.text}
-              </p>
+              <p className="mt-4 text-sm text-gray leading-relaxed">{block.text}</p>
             </Link>
           </motion.article>
         ))}
