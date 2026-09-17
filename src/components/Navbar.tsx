@@ -14,6 +14,8 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/#industries", label: "Industries" },
+  { href: "/#why-neema", label: "Why Neema" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -59,18 +61,18 @@ export default function Navbar() {
               alt="Neema Security Group"
               width={200}
               height={64}
-              className="h-10 sm:h-12 w-auto brightness-0 invert"
+              className="h-9 sm:h-11 w-auto brightness-0 invert"
               priority
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium tracking-wide transition-colors hover:text-gold",
+                  "text-[13px] font-medium tracking-wide uppercase transition-colors hover:text-gold",
                   pathname === link.href ? "text-gold" : "text-white/90"
                 )}
               >
@@ -82,7 +84,7 @@ export default function Navbar() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="inline-flex items-center px-5 py-2.5 bg-gold text-dark-navy text-sm font-semibold tracking-wide uppercase hover:bg-light-gold transition-colors duration-300"
+              className="inline-flex items-center px-5 py-2.5 bg-gold text-dark-navy text-xs font-semibold tracking-wide uppercase hover:bg-light-gold transition-colors duration-300"
             >
               Request Protection
             </Link>
@@ -118,6 +120,7 @@ export default function Navbar() {
                   >
                     <Link
                       href={link.href}
+                      onClick={() => setMobileOpen(false)}
                       className={cn(
                         "text-2xl font-medium transition-colors",
                         pathname === link.href
@@ -133,12 +136,13 @@ export default function Navbar() {
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="mt-10"
+                transition={{ delay: 0.35 }}
+                className="mt-12"
               >
                 <Link
                   href="/contact"
-                  className="inline-flex items-center px-6 py-3 bg-gold text-dark-navy text-sm font-semibold tracking-wide uppercase"
+                  onClick={() => setMobileOpen(false)}
+                  className="inline-flex items-center px-6 py-3.5 bg-gold text-dark-navy text-sm font-semibold tracking-wide uppercase"
                 >
                   Request Protection
                 </Link>
