@@ -6,7 +6,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const LOGO = "/BackgroundEraser_20260915_110802894.png";
 
