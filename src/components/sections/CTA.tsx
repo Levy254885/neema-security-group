@@ -20,7 +20,7 @@ export default function CTA() {
           <div className="absolute inset-0 bg-dark-navy/85" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -36,14 +36,14 @@ export default function CTA() {
             transition={{ delay: 0.1 }}
             className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold text-white max-w-3xl mx-auto leading-tight"
           >
-            Need Protection for Your Property or Business?
+            Does Your Business Need Protection?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-5 text-white/70 text-lg max-w-xl mx-auto"
+            className="mt-6 text-white/70 text-lg max-w-xl mx-auto leading-relaxed"
           >
             Tell us about your site and we will put together a security plan
             that fits your people, property and day to day operations.

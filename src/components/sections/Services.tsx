@@ -23,10 +23,9 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-24 lg:py-32 bg-off-white overflow-hidden"
+      className="relative py-28 lg:py-40 bg-off-white overflow-hidden"
     >
       <div className="absolute top-0 right-0 w-1/3 h-full bg-navy clip-diagonal opacity-5 pointer-events-none" />
-      <div className="absolute -top-20 -right-20 w-80 h-80 bg-gold/10 rotate-45 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
@@ -34,19 +33,19 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mb-16"
+          className="max-w-3xl mb-20"
         >
           <span className="text-xs tracking-[0.3em] text-gold uppercase font-medium">
-            What We Offer
+            Our Services
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark-navy leading-tight">
-            Our Security
+          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark-navy leading-tight">
+            Security Solutions
             <br />
-            <span className="text-navy">Services</span>
+            <span className="text-navy">Tailored to Your Needs</span>
           </h2>
-          <p className="mt-5 text-charcoal/70 text-lg max-w-xl">
-            Protection built around the people, properties and work that
-            matter to you.
+          <p className="mt-6 text-charcoal/70 text-lg max-w-xl leading-relaxed">
+            From everyday guarding to specialised protection, Neema delivers
+            professional security built around each client.
           </p>
         </motion.div>
 
@@ -99,7 +98,7 @@ export default function Services() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 text-center"
+          className="mt-14 text-center"
         >
           <Link
             href="/services"
