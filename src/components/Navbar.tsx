@@ -5,29 +5,56 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X, Search, ChevronDown, Globe } from "lucide-react";
 
 const LOGO = "/BackgroundEraser_20260915_110802894.png";
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/contact", label: "Contact" },
-];
-
-const serviceLinks = [
-  { href: "/services/manned-guarding", label: "Manned Guarding" },
-  { href: "/services/corporate-security", label: "Corporate Security" },
-  { href: "/services/residential-security", label: "Residential Security" },
-  { href: "/services/event-security", label: "Event Security" },
-  { href: "/services/access-control", label: "Access Control" },
-  { href: "/services/security-consulting", label: "Security Consulting" },
+const menuItems = [
+  {
+    label: "Who We Are",
+    href: "/about",
+    children: [
+      { label: "About Neema", href: "/about" },
+      { label: "Our Values", href: "/about" },
+    ],
+  },
+  {
+    label: "What We Do",
+    href: "/services",
+    children: [
+      { label: "Manned Guarding", href: "/services/manned-guarding" },
+      { label: "Corporate Security", href: "/services/corporate-security" },
+      { label: "Residential Security", href: "/services/residential-security" },
+      { label: "Event Security", href: "/services/event-security" },
+      { label: "Access Control", href: "/services/access-control" },
+      { label: "Security Consulting", href: "/services/security-consulting" },
+    ],
+  },
+  {
+    label: "News and Insights",
+    href: "/about",
+    children: [
+      { label: "Latest Updates", href: "/about" },
+      { label: "Security Insights", href: "/services" },
+    ],
+  },
+  { label: "Careers", href: "/contact" },
+  {
+    label: "Our Commitment",
+    href: "/about",
+    children: [
+      { label: "Vigilance", href: "/about" },
+      { label: "Integrity", href: "/about" },
+      { label: "Protection", href: "/about" },
+    ],
+  },
+  { label: "Contacts", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -40,61 +67,73 @@ export default function Navbar() {
   useEffect(() => {
     setMobileOpen(false);
     setSearchOpen(false);
+    setOpenAccordion(null);
   }, [pathname]);
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14 sm:h-16">
-          <Link href="/" className="flex items-center shrink-0" aria-label="Neema Security Group Home">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.08)]">
+        <div className="max-w-[1200px] mx-auto px-4 flex items-center justify-between h-[56px]">
+          <Link href="/" className="flex items-center shrink-0" aria-label="Neema Security Group">
             <Image
               src={LOGO}
               alt="Neema Security Group"
-              width={140}
-              height={44}
-              className="h-8 sm:h-9 w-auto object-contain"
+              width={120}
+              height={40}
+              className="h-[32px] w-auto object-contain"
               priority
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
+          <nav className="hidden lg:flex items-center gap-6">
+            {menuItems.map((item) => (
               <Link
-                key={link.href}
-                href={link.href}
-                className={
-                  "text-[13px] font-semibold tracking-wide uppercase transition-colors " +
-                  (pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
-                    ? "text-green"
-                    : "text-charcoal hover:text-green")
-                }
+                key={item.label}
+                href={item.href}
+                className="text-[13px] font-medium text-charcoal hover:text-red transition-colors"
               >
-                {link.label}
+                {item.label}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="ml-2 inline-flex items-center px-5 py-2.5 bg-green text-white text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-green-dark transition-colors"
+              className="ml-2 inline-flex items-center px-4 py-2 bg-red text-white text-[12px] font-semibold uppercase tracking-wide hover:bg-red-dark transition-colors"
             >
               Get a Quote
             </Link>
           </nav>
 
-          <div className="flex items-center gap-1 lg:hidden">
-            <button
-              onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2.5 text-charcoal hover:text-green transition-colors"
-              aria-label="Search"
-            >
-              <Search size={20} strokeWidth={1.75} />
+          <div className="flex items-center gap-0.5 lg:hidden">
+            <button className="p-2.5 text-charcoal" aria-label="Language">
+              <Globe size={20} strokeWidth={1.5} />
             </button>
             <button
-              onClick={() => setMobileOpen(!mobileOpen)}
+              onClick={() => {
+                setSearchOpen(!searchOpen);
+                setMobileOpen(false);
+              }}
               className="p-2.5 text-charcoal"
+              aria-label="Search"
+            >
+              <Search size={20} strokeWidth={1.5} />
+            </button>
+            <button
+              onClick={() => {
+                setMobileOpen(!mobileOpen);
+                setSearchOpen(false);
+              }}
+              className={
+                "p-2.5 ml-0.5 " +
+                (mobileOpen ? "bg-red text-white" : "text-charcoal")
+              }
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
             >
-              {mobileOpen ? <X size={22} strokeWidth={1.75} /> : <Menu size={22} strokeWidth={1.75} />}
+              {mobileOpen ? (
+                <X size={22} strokeWidth={2} />
+              ) : (
+                <Menu size={22} strokeWidth={1.75} />
+              )}
             </button>
           </div>
         </div>
@@ -105,13 +144,13 @@ export default function Navbar() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="lg:hidden border-t border-gray-border overflow-hidden"
+              className="lg:hidden border-t border-gray-border overflow-hidden bg-white"
             >
               <div className="px-4 py-3">
                 <input
                   type="search"
-                  placeholder="Search services..."
-                  className="w-full px-4 py-2.5 border border-gray-border text-sm focus:outline-none focus:border-green"
+                  placeholder="Search..."
+                  className="w-full px-3 py-2.5 border border-gray-border text-sm focus:outline-none focus:border-red"
                   autoFocus
                 />
               </div>
@@ -126,53 +165,68 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-white lg:hidden pt-14 overflow-y-auto"
+            transition={{ duration: 0.15 }}
+            className="fixed inset-0 z-40 bg-white lg:hidden pt-[56px] overflow-y-auto"
           >
-            <nav className="flex flex-col px-5 pb-12">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.03 * i }}
-                >
-                  <Link
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className={
-                      "block py-4 text-[15px] font-bold uppercase tracking-[0.06em] border-b border-gray-border " +
-                      (pathname === link.href ? "text-green" : "text-charcoal")
-                    }
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
+            <nav className="flex flex-col">
+              {menuItems.map((item) => {
+                const hasChildren = item.children && item.children.length > 0;
+                const isOpen = openAccordion === item.label;
 
-              <div className="mt-6 mb-2">
-                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-gray-light mb-3">
-                  Our Services
-                </p>
-                {serviceLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2.5 text-sm text-charcoal hover:text-green transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-
-              <Link
-                href="/contact"
-                onClick={() => setMobileOpen(false)}
-                className="mt-8 flex items-center justify-center py-3.5 bg-green text-white text-[12px] font-bold tracking-[0.12em] uppercase hover:bg-green-dark transition-colors"
-              >
-                Request a Quote
-              </Link>
+                return (
+                  <div key={item.label} className="border-b border-gray-border">
+                    {hasChildren ? (
+                      <>
+                        <button
+                          onClick={() =>
+                            setOpenAccordion(isOpen ? null : item.label)
+                          }
+                          className="w-full flex items-center justify-between px-5 py-4 text-[16px] text-charcoal font-normal"
+                        >
+                          {item.label}
+                          <ChevronDown
+                            size={18}
+                            strokeWidth={1.5}
+                            className={
+                              "text-gray-light transition-transform " +
+                              (isOpen ? "rotate-180" : "")
+                            }
+                          />
+                        </button>
+                        <AnimatePresence>
+                          {isOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              className="overflow-hidden bg-gray-bg"
+                            >
+                              {item.children!.map((child) => (
+                                <Link
+                                  key={child.href + child.label}
+                                  href={child.href}
+                                  onClick={() => setMobileOpen(false)}
+                                  className="block px-8 py-3 text-[14px] text-gray hover:text-red"
+                                >
+                                  {child.label}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="block px-5 py-4 text-[16px] text-charcoal"
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+                  </div>
+                );
+              })}
             </nav>
           </motion.div>
         )}
