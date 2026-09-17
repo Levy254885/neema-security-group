@@ -3,7 +3,6 @@
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 const slides = [
@@ -55,7 +54,6 @@ export default function Hero() {
 
   return (
     <section className="relative w-full bg-white">
-      {/* Upper visual band — compact, matching G4S report hero */}
       <div className="relative h-[140px] sm:h-[180px] md:h-[220px] lg:h-[260px] w-full overflow-hidden bg-[#E8EEF2]">
         <Image
           src={slide.image}
@@ -79,7 +77,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Black text band — exact G4S structure */}
       <div className="relative bg-black text-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 py-8 sm:py-10 lg:py-12">
           <AnimatePresence mode="wait">
