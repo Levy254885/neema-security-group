@@ -1,68 +1,52 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/data/services";
 
 export default function Services() {
   return (
-    <section id="services" className="py-16 sm:py-20 bg-off-white">
-      <div className="max-w-lg mx-auto px-4 sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <h2 className="text-xl sm:text-2xl font-bold text-charcoal uppercase tracking-[0.1em]">
-            What We Offer
-          </h2>
-          <div className="flex items-center justify-center gap-2 mt-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-green" />
-            <span className="w-1.5 h-1.5 rounded-full bg-green" />
-            <span className="w-1.5 h-1.5 rounded-full bg-green" />
-          </div>
-        </motion.div>
-
-        <div className="space-y-0 border-t border-black/10">
+    <section id="services" className="py-16 lg:py-24 bg-off-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {services.map((service, i) => (
-            <motion.div
+            <motion.article
               key={service.slug}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.04 }}
+              transition={{ delay: i * 0.06, duration: 0.5 }}
+              className="group relative bg-white overflow-hidden"
             >
-              <Link
-                href={`/services/${service.slug}`}
-                className="flex items-start gap-4 py-5 border-b border-black/10 group"
-              >
-                <span className="text-green text-xs font-bold tracking-wider pt-0.5 shrink-0">
-                  {service.number}
-                </span>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-sm font-bold text-charcoal uppercase tracking-wide group-hover:text-green transition-colors">
+              <Link href={`/services/${service.slug}`} className="block">
+                <div className="relative h-52 overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors duration-400" />
+                  <span className="absolute top-4 left-4 text-white/90 text-xs font-bold tracking-[0.15em]">
+                    {service.number}
+                  </span>
+                </div>
+                <div className="p-5 sm:p-6">
+                  <h3 className="text-base sm:text-lg font-bold text-charcoal uppercase tracking-wide group-hover:text-green transition-colors">
                     {service.title}
                   </h3>
-                  <p className="mt-1 text-sm text-gray leading-relaxed">
+                  <p className="mt-2 text-sm text-gray leading-relaxed line-clamp-2">
                     {service.description}
                   </p>
+                  <span className="mt-4 inline-flex text-xs font-bold tracking-[0.1em] uppercase text-green group-hover:translate-x-0.5 transition-transform">
+                    Explore Service →
+                  </span>
                 </div>
-                <span className="text-green text-lg shrink-0 group-hover:translate-x-0.5 transition-transform">
-                  ›
-                </span>
               </Link>
-            </motion.div>
+            </motion.article>
           ))}
-        </div>
-
-        <div className="mt-10 text-center">
-          <Link
-            href="/services"
-            className="inline-flex items-center justify-center px-8 py-3 border border-green text-green text-xs font-bold tracking-[0.12em] uppercase hover:bg-green hover:text-white transition-colors"
-          >
-            View All Services
-          </Link>
         </div>
       </div>
     </section>

@@ -5,110 +5,83 @@ import Image from "next/image";
 
 const industries = [
   {
-    number: "01",
-    title: "Corporate Offices",
-    description: "Safe workplaces for staff and daily operations.",
+    title: "Corporate",
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
   },
   {
-    number: "02",
-    title: "Residential Estates",
-    description: "Quiet protection for homes and gated communities.",
+    title: "Residential",
+    image:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
   },
   {
-    number: "03",
-    title: "Retail and Commercial",
-    description: "Presence and access control for commercial spaces.",
+    title: "Retail",
+    image:
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop",
   },
   {
-    number: "04",
-    title: "Construction Sites",
-    description: "Perimeter and asset security on active project sites.",
+    title: "Industrial",
+    image:
+      "https://images.unsplash.com/photo-1581094794329-cdc75aba1f8b?q=80&w=800&auto=format&fit=crop",
   },
   {
-    number: "05",
+    title: "Events",
+    image:
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop",
+  },
+  {
     title: "Institutions",
-    description: "Steady coverage for schools, clinics and public facilities.",
-  },
-  {
-    number: "06",
-    title: "Events and Functions",
-    description: "Event coverage with controlled access.",
+    image:
+      "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop",
   },
 ];
 
 export default function Industries() {
   return (
-    <section
-      id="industries"
-      className="relative py-24 lg:py-32 bg-off-white overflow-hidden"
-    >
+    <section id="industries" className="py-20 lg:py-28 bg-off-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-4"
-          >
-            <span className="text-xs tracking-[0.3em] text-gold uppercase font-medium">
-              Sectors We Protect
-            </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-dark-navy leading-tight">
-              We work across
-              <br />
-              sites that need
-              <br />
-              real discipline.
-            </h2>
-            <p className="mt-5 text-charcoal/70 leading-relaxed">
-              From office buildings to residential gates, we provide steady
-              professional presence shaped around each site.
-            </p>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-[11px] tracking-[0.25em] text-green uppercase font-semibold text-center"
+        >
+          Who We Protect
+        </motion.p>
+        <motion.h2
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal text-center"
+        >
+          Security for Every Environment
+        </motion.h2>
 
-            <div className="mt-8 relative h-64 hidden lg:block">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {industries.map((ind, i) => (
+            <motion.div
+              key={ind.title}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+              className="group relative h-48 sm:h-56 overflow-hidden"
+            >
               <Image
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"
-                alt="Corporate environment protected by Neema"
+                src={ind.image}
+                alt={ind.title}
                 fill
-                className="object-cover"
-                sizes="400px"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 640px) 100vw, 33vw"
               />
-              <div className="absolute inset-0 bg-navy/30" />
-            </div>
-          </motion.div>
-
-          <div className="lg:col-span-8 grid sm:grid-cols-2 gap-4">
-            {industries.map((item, index) => (
-              <motion.div
-                key={item.number}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                className={`p-6 border border-charcoal/10 hover:border-gold/40 transition-colors ${
-                  index % 3 === 0 ? "bg-navy text-white" : "bg-white"
-                }`}
-              >
-                <span className="text-xs font-semibold tracking-widest text-gold">
-                  {item.number}
-                </span>
-                <h3
-                  className={`mt-3 text-lg font-semibold ${
-                    index % 3 === 0 ? "text-white" : "text-dark-navy"
-                  }`}
-                >
-                  {item.title}
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/55 transition-colors" />
+              <div className="absolute inset-0 flex items-end p-5">
+                <h3 className="text-white text-sm font-bold uppercase tracking-[0.12em] group-hover:translate-y-[-2px] transition-transform">
+                  {ind.title} →
                 </h3>
-                <p
-                  className={`mt-2 text-sm ${
-                    index % 3 === 0 ? "text-white/70" : "text-charcoal/60"
-                  }`}
-                >
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,68 +1,131 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail } from "lucide-react";
+import { services } from "@/data/services";
 
 const LOGO = "/BackgroundEraser_20260915_110802894.png";
 
-const usefulLinks = [
-  { href: "/contact", label: "Emergency Contacts" },
-  { href: "/contact", label: "Request a Quote" },
-  { href: "/services", label: "Our Services" },
-  { href: "/about", label: "About Us" },
-  { href: "/contact", label: "Contact" },
-];
-
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1a1a] text-white">
-      <div className="bg-green">
-        <div className="max-w-lg mx-auto px-5 py-5 flex items-center gap-4">
-          <Mail className="w-8 h-8 text-white shrink-0 stroke-[1.5]" />
-          <p className="text-sm font-bold uppercase tracking-wide leading-snug">
-            Interested in our services? Get a quote today!
-          </p>
-        </div>
-      </div>
+    <footer className="bg-black text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src={LOGO}
+                alt="Neema Security Group"
+                width={150}
+                height={48}
+                className="h-9 w-auto brightness-0 invert"
+              />
+            </Link>
+            <p className="text-sm text-white/55 leading-relaxed">
+              Vigilance. Integrity. Protection.
+            </p>
+            <p className="mt-4 text-xs text-white/40 uppercase tracking-wider">
+              Professional security solutions
+            </p>
+          </div>
 
-      <div className="max-w-lg mx-auto px-5 py-12">
-        <h3 className="text-base font-bold uppercase tracking-[0.12em] mb-4">
-          About Neema Security
-        </h3>
-        <p className="text-sm text-white/70 leading-relaxed mb-10">
-          Neema Security Group is dedicated to understanding and meeting our
-          clients requirements with cost effective service, efficiency and
-          reliability, supported by disciplined personnel and clear procedures.
-        </p>
+          <div>
+            <h3 className="text-[11px] tracking-[0.15em] uppercase font-bold text-white/50 mb-4">
+              Company
+            </h3>
+            <ul className="space-y-2.5">
+              {[
+                { href: "/about", label: "About" },
+                { href: "/services", label: "Services" },
+                { href: "/#industries", label: "Industries" },
+                { href: "/contact", label: "Careers" },
+                { href: "/contact", label: "Contact" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <Link
+                    href={l.href}
+                    className="text-sm text-white/70 hover:text-white transition-colors"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <h3 className="text-base font-bold uppercase tracking-[0.12em] mb-4">
-          Useful Links
-        </h3>
-        <ul className="space-y-3 mb-12">
-          {usefulLinks.map((link) => (
-            <li key={link.label}>
+          <div>
+            <h3 className="text-[11px] tracking-[0.15em] uppercase font-bold text-white/50 mb-4">
+              Services
+            </h3>
+            <ul className="space-y-2.5">
+              {services.slice(0, 6).map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    href={`/services/${s.slug}`}
+                    className="text-sm text-white/70 hover:text-white transition-colors"
+                  >
+                    {s.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-[11px] tracking-[0.15em] uppercase font-bold text-white/50 mb-4">
+              Support
+            </h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  Request a Quote
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  Customer Support
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  Emergency Assistance
+                </Link>
+              </li>
+            </ul>
+            <div className="mt-6 p-4 bg-white/5 border border-white/10">
+              <p className="text-[10px] tracking-[0.15em] uppercase text-green-light font-bold mb-1">
+                24/7 Emergency
+              </p>
               <Link
-                href={link.href}
-                className="flex items-center gap-2 text-sm text-white/75 hover:text-white transition-colors"
+                href="/contact"
+                className="text-sm font-semibold text-white hover:underline"
               >
-                <span className="text-green font-bold">›</span>
-                {link.label}
+                Contact for assistance →
               </Link>
-            </li>
-          ))}
-        </ul>
+            </div>
+          </div>
+        </div>
 
-        <Link href="/" className="inline-block mb-6">
-          <Image
-            src={LOGO}
-            alt="Neema Security Group"
-            width={140}
-            height={44}
-            className="h-9 w-auto brightness-0 invert opacity-90"
-          />
-        </Link>
-        <p className="text-xs text-white/40">
-          © 2026 Neema Security Group. All rights reserved.
-        </p>
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="text-xs text-white/35">
+            © 2026 Neema Security Group. All rights reserved.
+          </p>
+          <div className="flex gap-4 text-xs text-white/35">
+            <Link href="/contact" className="hover:text-white/60">
+              Privacy
+            </Link>
+            <Link href="/contact" className="hover:text-white/60">
+              Terms
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );
