@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="pt-14 sm:pt-16">
+      <main className="pt-[56px]">
         <Hero />
         <OurServices />
         <FeaturedResources />

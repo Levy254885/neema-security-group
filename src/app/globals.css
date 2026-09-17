@@ -1,55 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --green: #1B6B4A;
-  --green-dark: #0F3D2E;
-  --green-deep: #0A2E22;
-  --green-light: #2D8A5E;
-  --green-muted: #E8F2EC;
-  --black: #0D0D0D;
+  --red: #E30613;
+  --red-dark: #B80510;
+  --red-light: #FF1A27;
+  --black: #111111;
   --charcoal: #1A1A1A;
   --gray: #4A4A4A;
   --gray-light: #6B6B6B;
-  --gray-border: #E5E5E5;
+  --gray-border: #E8E8E8;
+  --gray-bg: #F5F5F5;
   --white: #FFFFFF;
-  --off-white: #F5F5F5;
+  --off-white: #F7F7F7;
   --background: #FFFFFF;
   --foreground: #1A1A1A;
-  --accent: #1B6B4A;
-  --accent-hover: #0F3D2E;
-  /* Legacy aliases used by about/contact/services pages */
-  --navy: #0F3D2E;
-  --dark-navy: #0A2E22;
-  --gold: #1B6B4A;
-  --light-gold: #2D8A5E;
+  --green: #E30613;
+  --green-dark: #B80510;
+  --green-deep: #8A040C;
+  --green-light: #FF1A27;
+  --green-muted: #FDE8E9;
+  --navy: #1A1A1A;
+  --dark-navy: #111111;
+  --gold: #E30613;
+  --light-gold: #FF1A27;
+  --accent: #E30613;
+  --accent-hover: #B80510;
 }
 
 @theme inline {
-  --color-green: var(--green);
-  --color-green-dark: var(--green-dark);
-  --color-green-deep: var(--green-deep);
-  --color-green-light: var(--green-light);
-  --color-green-muted: var(--green-muted);
+  --color-red: var(--red);
+  --color-red-dark: var(--red-dark);
+  --color-red-light: var(--red-light);
   --color-black: var(--black);
   --color-charcoal: var(--charcoal);
   --color-gray: var(--gray);
   --color-gray-light: var(--gray-light);
   --color-gray-border: var(--gray-border);
+  --color-gray-bg: var(--gray-bg);
   --color-off-white: var(--off-white);
-  --color-accent: var(--accent);
-  --color-accent-hover: var(--accent-hover);
+  --color-green: var(--green);
+  --color-green-dark: var(--green-dark);
+  --color-green-deep: var(--green-deep);
+  --color-green-light: var(--green-light);
+  --color-green-muted: var(--green-muted);
   --color-navy: var(--navy);
   --color-dark-navy: var(--dark-navy);
   --color-gold: var(--gold);
   --color-light-gold: var(--light-gold);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--background);
@@ -60,9 +65,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -70,12 +73,5 @@ body {
   }
 }
 
-::selection {
-  background-color: var(--green);
-  color: white;
-}
-
-:focus-visible {
-  outline: 2px solid var(--green);
-  outline-offset: 2px;
-}
+::selection { background-color: var(--red); color: white; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
