@@ -1,27 +1,25 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Welcome from "@/components/sections/Welcome";
+import FeatureBlocks from "@/components/sections/FeatureBlocks";
+import ThreeSteps from "@/components/sections/ThreeSteps";
 import OurServices from "@/components/sections/OurServices";
-import FeaturedResources from "@/components/sections/FeaturedResources";
 import SecurityRisks from "@/components/sections/SecurityRisks";
-import WhoWeAre from "@/components/sections/WhoWeAre";
-import LatestNews from "@/components/sections/LatestNews";
-import Careers from "@/components/sections/Careers";
-import Commitment from "@/components/sections/Commitment";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="pt-[56px]">
+      <main className="pt-[56px] lg:pt-[72px]">
         <Hero />
-        <OurServices />
-        <FeaturedResources />
-        <SecurityRisks />
-        <WhoWeAre />
-        <LatestNews />
-        <Careers />
-        <Commitment />
+        <Welcome />
+        <FeatureBlocks />
+        <ThreeSteps />
+        <div className="lg:hidden">
+          <OurServices />
+          <SecurityRisks />
+        </div>
       </main>
       <Footer />
     </>
