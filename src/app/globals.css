@@ -2,11 +2,11 @@
 
 :root {
   --navy: #071A2B;
-  --dark-navy: #04111D;
-  --gold: #C99A3A;
+  --dark-navy: #081018;
+  --gold: #C9A34A;
   --light-gold: #D8B45A;
   --white: #FFFFFF;
-  --off-white: #F5F4F0;
+  --off-white: #F6F5F1;
   --charcoal: #171A1D;
   --background: #FFFFFF;
   --foreground: #171A1D;
@@ -36,7 +36,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -48,19 +47,16 @@ body {
   }
 }
 
-/* Custom selection */
 ::selection {
   background-color: var(--gold);
   color: var(--dark-navy);
 }
 
-/* Focus styles */
 :focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 2px;
 }
 
-/* Utility for diagonal clip */
 .clip-diagonal {
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
