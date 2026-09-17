@@ -13,26 +13,26 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-dark-navy text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="bg-green-deep text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div className="lg:col-span-1">
+          <div>
             <Link href="/" className="inline-block mb-4">
               <Image
                 src={LOGO}
                 alt="Neema Security Group"
-                width={180}
-                height={56}
-                className="h-11 w-auto brightness-0 invert"
+                width={160}
+                height={50}
+                className="h-10 w-auto brightness-0 invert"
               />
             </Link>
-            <p className="text-sm text-white/60 leading-relaxed">
+            <p className="text-sm text-white/70 leading-relaxed">
               Vigilance. Integrity. Protection.
             </p>
           </div>
 
           <div>
-            <h3 className="text-xs tracking-[0.2em] text-gold uppercase font-medium mb-4">
+            <h3 className="text-xs tracking-[0.2em] text-white/50 uppercase font-semibold mb-4">
               Navigation
             </h3>
             <ul className="space-y-2">
@@ -40,7 +40,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/70 hover:text-gold transition-colors"
+                    className="text-sm text-white/80 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -50,15 +50,15 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs tracking-[0.2em] text-gold uppercase font-medium mb-4">
+            <h3 className="text-xs tracking-[0.2em] text-white/50 uppercase font-semibold mb-4">
               Services
             </h3>
             <ul className="space-y-2">
-              {services.map((s) => (
+              {services.slice(0, 5).map((s) => (
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="text-sm text-white/70 hover:text-gold transition-colors"
+                    className="text-sm text-white/80 hover:text-white transition-colors"
                   >
                     {s.title}
                   </Link>
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs tracking-[0.2em] text-gold uppercase font-medium mb-4">
+            <h3 className="text-xs tracking-[0.2em] text-white/50 uppercase font-semibold mb-4">
               Get in Touch
             </h3>
             <p className="text-sm text-white/70 leading-relaxed mb-4">
@@ -77,19 +77,16 @@ export default function Footer() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex text-sm font-semibold text-gold hover:text-light-gold transition-colors"
+              className="inline-flex text-sm font-semibold text-white hover:underline"
             >
               Contact Us →
             </Link>
           </div>
         </div>
 
-        <div className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-xs text-white/40">
             © 2026 Neema Security Group. All rights reserved.
-          </p>
-          <p className="text-xs text-white/40">
-            Professional Security Solutions
           </p>
         </div>
       </div>
