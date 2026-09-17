@@ -1,113 +1,68 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
-const serviceCards = [
+const cards = [
   {
-    title: "Manned Guarding",
+    title: "Enhanced Protective Services",
     description:
-      "Trained officers providing visible presence, access control and incident response for commercial, residential and institutional sites.",
+      "End-to-end security solutions that help organisations of all sizes build robust programmes and stay ahead of evolving risks.",
     image:
       "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1200&auto=format&fit=crop",
     href: "/services/manned-guarding",
   },
   {
-    title: "Corporate Security",
+    title: "Facilities Management",
     description:
-      "Professional security for offices and business facilities that protects people and assets while supporting day-to-day operations.",
+      "Hard and soft facilities services that support compliance, operational efficiency and a secure workplace environment.",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
     href: "/services/corporate-security",
-  },
-  {
-    title: "Residential Security",
-    description:
-      "Discreet, reliable protection for homes, estates and residential communities with clear procedures and resident-focused service.",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
-    href: "/services/residential-security",
-  },
-  {
-    title: "Access Control",
-    description:
-      "Controlled entry systems and procedures so you know who enters your property, when they enter, and under what conditions.",
-    image:
-      "https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=1200&auto=format&fit=crop",
-    href: "/services/access-control",
   },
 ];
 
 export default function OurServices() {
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-end justify-between mb-8 sm:mb-10">
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-green mb-2">
-              What We Deliver
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-charcoal tracking-tight">
-              Our Services
-            </h2>
-          </div>
-          <Link
-            href="/services"
-            className="hidden sm:inline-flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-green hover:text-green-dark transition-colors"
-          >
-            View All
-            <ChevronRight size={16} strokeWidth={2.5} />
-          </Link>
-        </div>
+    <section className="bg-white py-10 sm:py-14">
+      <div className="max-w-[1200px] mx-auto px-4">
+        <h2 className="text-[22px] sm:text-[26px] font-bold text-charcoal mb-6 sm:mb-8">
+          Our Services
+        </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-          {serviceCards.map((card, i) => (
-            <motion.article
+        <div className="space-y-5">
+          {cards.map((card) => (
+            <Link
               key={card.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ delay: i * 0.06, duration: 0.45 }}
+              href={card.href}
+              className="group block relative overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.1)]"
             >
-              <Link href={card.href} className="group block">
-                <div className="relative h-52 sm:h-56 lg:h-64 overflow-hidden bg-gray-100">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
-                    <h3 className="text-lg sm:text-xl font-bold text-white uppercase tracking-wide">
+              <div className="relative h-[220px] sm:h-[260px]">
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  sizes="(max-width: 768px) 100vw, 800px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between gap-3">
+                  <div>
+                    <h3 className="text-[18px] sm:text-[20px] font-bold text-white leading-snug">
                       {card.title}
                     </h3>
+                    <p className="mt-1.5 text-[12px] sm:text-[13px] text-white/90 leading-relaxed max-w-[260px] line-clamp-2">
+                      {card.description}
+                    </p>
                   </div>
-                </div>
-                <div className="pt-4 pb-1 flex items-start justify-between gap-3">
-                  <p className="text-sm text-gray leading-relaxed flex-1">
-                    {card.description}
-                  </p>
-                  <span className="shrink-0 w-9 h-9 rounded-full border border-green text-green flex items-center justify-center group-hover:bg-green group-hover:text-white transition-colors mt-0.5">
-                    <ChevronRight size={18} strokeWidth={2.25} />
+                  <span className="shrink-0 w-10 h-10 rounded-full bg-red flex items-center justify-center text-white shadow-md">
+                    <ChevronRight size={20} strokeWidth={2.5} />
                   </span>
                 </div>
-              </Link>
-            </motion.article>
+              </div>
+            </Link>
           ))}
-        </div>
-
-        <div className="mt-8 sm:hidden">
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-green"
-          >
-            View All Services
-            <ChevronRight size={16} strokeWidth={2.5} />
-          </Link>
         </div>
       </div>
     </section>
