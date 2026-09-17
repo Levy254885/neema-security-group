@@ -1,24 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #071A2B;
-  --dark-navy: #081018;
-  --gold: #C9A34A;
-  --light-gold: #D8B45A;
+  --green: #1B6B4A;
+  --green-dark: #0F3D2E;
+  --green-deep: #0A2E22;
+  --green-light: #2D8A5E;
+  --green-muted: #E8F2EC;
   --white: #FFFFFF;
-  --off-white: #F6F5F1;
-  --charcoal: #171A1D;
+  --off-white: #F7F8F6;
+  --charcoal: #1A1A1A;
+  --gray: #5A5A5A;
   --background: #FFFFFF;
-  --foreground: #171A1D;
+  --foreground: #1A1A1A;
+  --navy: var(--green-dark);
+  --dark-navy: var(--green-deep);
+  --gold: var(--green);
+  --light-gold: var(--green-light);
 }
 
 @theme inline {
+  --color-green: var(--green);
+  --color-green-dark: var(--green-dark);
+  --color-green-deep: var(--green-deep);
+  --color-green-light: var(--green-light);
+  --color-green-muted: var(--green-muted);
   --color-navy: var(--navy);
   --color-dark-navy: var(--dark-navy);
   --color-gold: var(--gold);
   --color-light-gold: var(--light-gold);
   --color-off-white: var(--off-white);
   --color-charcoal: var(--charcoal);
+  --color-gray: var(--gray);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
@@ -48,19 +60,11 @@ body {
 }
 
 ::selection {
-  background-color: var(--gold);
-  color: var(--dark-navy);
+  background-color: var(--green);
+  color: white;
 }
 
 :focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--green);
   outline-offset: 2px;
-}
-
-.clip-diagonal {
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-}
-
-.clip-diagonal-reverse {
-  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
 }

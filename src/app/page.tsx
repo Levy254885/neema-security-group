@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Welcome from "@/components/sections/Welcome";
 import Services from "@/components/sections/Services";
 import About from "@/components/sections/About";
 import Approach from "@/components/sections/Approach";
@@ -13,8 +14,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="pt-[72px]">
         <Hero />
+        <Welcome />
         <Services />
         <About />
         <Approach />
