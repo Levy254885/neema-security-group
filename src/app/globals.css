@@ -8,16 +8,20 @@
   --green-muted: #E8F2EC;
   --black: #0D0D0D;
   --charcoal: #1A1A1A;
-  --gray: #5A5A5A;
-  --gray-light: #8A8A8A;
+  --gray: #4A4A4A;
+  --gray-light: #6B6B6B;
+  --gray-border: #E5E5E5;
   --white: #FFFFFF;
-  --off-white: #F7F8F6;
+  --off-white: #F5F5F5;
   --background: #FFFFFF;
   --foreground: #1A1A1A;
-  --navy: var(--green-dark);
-  --dark-navy: var(--green-deep);
-  --gold: var(--green);
-  --light-gold: var(--green-light);
+  --accent: #1B6B4A;
+  --accent-hover: #0F3D2E;
+  /* Legacy aliases used by about/contact/services pages */
+  --navy: #0F3D2E;
+  --dark-navy: #0A2E22;
+  --gold: #1B6B4A;
+  --light-gold: #2D8A5E;
 }
 
 @theme inline {
@@ -30,7 +34,10 @@
   --color-charcoal: var(--charcoal);
   --color-gray: var(--gray);
   --color-gray-light: var(--gray-light);
+  --color-gray-border: var(--gray-border);
   --color-off-white: var(--off-white);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-navy: var(--navy);
   --color-dark-navy: var(--dark-navy);
   --color-gold: var(--gold);
@@ -40,17 +47,22 @@
   --font-sans: var(--font-inter);
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -58,5 +70,12 @@ body {
   }
 }
 
-::selection { background-color: var(--green); color: white; }
-:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+::selection {
+  background-color: var(--green);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
