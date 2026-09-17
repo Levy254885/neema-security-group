@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin, ChevronUp } from "lucide-react";
 
-const LOGO = "/logo.png";
+const LOGO = "/BackgroundEraser_20260915_110802894.png";
 
 const serviceLinks = [
   { href: "/services/manned-guarding", label: "Manned Guarding" },
@@ -29,7 +29,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-charcoal text-white">
-      {/* Top CTA bar */}
       <div className="bg-green">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div className="flex items-center gap-3">
@@ -49,7 +48,6 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-          {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
               <Image
@@ -66,7 +64,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="text-[12px] font-bold uppercase tracking-[0.14em] mb-4">
               Services
@@ -85,7 +82,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
           <div>
             <h3 className="text-[12px] font-bold uppercase tracking-[0.14em] mb-4">
               Company
@@ -104,7 +100,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="text-[12px] font-bold uppercase tracking-[0.14em] mb-4">
               Contact

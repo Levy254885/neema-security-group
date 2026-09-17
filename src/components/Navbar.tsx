@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Search } from "lucide-react";
 
-const LOGO = "/logo.png";
+const LOGO = "/BackgroundEraser_20260915_110802894.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -57,7 +57,6 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
@@ -81,7 +80,6 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* Mobile controls */}
           <div className="flex items-center gap-1 lg:hidden">
             <button
               onClick={() => setSearchOpen(!searchOpen)}
@@ -101,7 +99,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile search bar */}
         <AnimatePresence>
           {searchOpen && (
             <motion.div
@@ -123,7 +120,6 @@ export default function Navbar() {
         </AnimatePresence>
       </header>
 
-      {/* Mobile full-screen menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
