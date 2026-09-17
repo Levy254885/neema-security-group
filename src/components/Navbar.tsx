@@ -14,20 +14,12 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/#industries", label: "Industries" },
   { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -40,22 +32,15 @@ export default function Navbar() {
 
   return (
     <>
-      <header
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          scrolled || mobileOpen
-            ? "bg-white shadow-md py-3"
-            : "bg-white/95 py-4"
-        )}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/5">
+        <div className="max-w-lg mx-auto lg:max-w-7xl px-4 sm:px-6 flex items-center justify-between h-[64px]">
           <Link href="/" className="flex items-center shrink-0">
             <Image
               src={LOGO}
               alt="Neema Security Group"
-              width={200}
-              height={64}
-              className="h-10 sm:h-12 w-auto"
+              width={180}
+              height={56}
+              className="h-9 sm:h-10 w-auto"
               priority
             />
           </Link>
@@ -66,7 +51,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-sm font-semibold tracking-wide uppercase transition-colors",
+                  "text-xs font-bold tracking-[0.12em] uppercase transition-colors",
                   pathname === link.href
                     ? "text-green"
                     : "text-charcoal hover:text-green"
@@ -75,23 +60,20 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-          </nav>
-
-          <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="inline-flex items-center px-6 py-2.5 bg-green text-white text-sm font-semibold tracking-wide uppercase hover:bg-green-dark transition-colors"
+              className="inline-flex items-center px-5 py-2 bg-green text-white text-xs font-bold tracking-[0.1em] uppercase hover:bg-green-dark transition-colors"
             >
-              Request Protection
+              Get a Quote
             </Link>
-          </div>
+          </nav>
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-charcoal"
+            className="lg:hidden p-2 -mr-2 text-charcoal"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
-            {mobileOpen ? <X size={26} /> : <Menu size={26} />}
+            {mobileOpen ? <X size={24} strokeWidth={1.75} /> : <Menu size={24} strokeWidth={1.75} />}
           </button>
         </div>
       </header>
@@ -99,25 +81,24 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-white lg:hidden pt-20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 bg-white lg:hidden pt-[64px]"
           >
-            <nav className="flex flex-col px-6 gap-1">
+            <nav className="flex flex-col px-5">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
-                  initial={{ opacity: 0, x: -12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.04 * i }}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.05 * i }}
                 >
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
                     className={cn(
-                      "block py-4 text-xl font-semibold border-b border-black/5",
+                      "block py-4 text-base font-bold uppercase tracking-wide border-b border-black/8",
                       pathname === link.href ? "text-green" : "text-charcoal"
                     )}
                   >
@@ -128,9 +109,9 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-8 inline-flex justify-center items-center px-6 py-3.5 bg-green text-white text-sm font-semibold tracking-wide uppercase"
+                className="mt-8 flex items-center justify-center py-3.5 bg-green text-white text-xs font-bold tracking-[0.12em] uppercase"
               >
-                Request Protection
+                Get a Quote
               </Link>
             </nav>
           </motion.div>

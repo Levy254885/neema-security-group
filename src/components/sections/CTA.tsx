@@ -5,44 +5,43 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section className="bg-green-deep text-white">
-      <div className="max-w-3xl mx-auto px-6 py-20 sm:py-24 text-center">
+    <section className="bg-green text-white">
+      <div className="max-w-lg mx-auto px-6 py-16 text-center">
         <motion.h2
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-wide"
+          className="text-xl sm:text-2xl font-bold uppercase tracking-[0.08em]"
         >
-          Does Your Business Need Protection?
+          Need Protection?
         </motion.h2>
+        <div className="flex items-center justify-center gap-2 mt-4 mb-5">
+          <span className="w-1.5 h-1.5 rounded-full bg-white" />
+          <span className="w-1.5 h-1.5 rounded-full bg-white" />
+          <span className="w-1.5 h-1.5 rounded-full bg-white" />
+        </div>
         <motion.p
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="mt-5 text-white/85 text-base sm:text-lg leading-relaxed max-w-xl mx-auto"
+          className="text-sm text-white/95 leading-relaxed"
         >
           Tell us about your site and we will put together a security plan that
-          fits your people, property and day to day operations.
+          fits your people, property and operations.
         </motion.p>
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          transition={{ delay: 0.15 }}
+          className="mt-8"
         >
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center min-w-[200px] px-8 py-3.5 bg-white text-green-deep text-sm font-bold tracking-wide uppercase hover:bg-green-muted transition-colors"
+            className="inline-flex items-center justify-center px-10 py-3 border border-white text-white text-xs font-bold tracking-[0.15em] uppercase hover:bg-white hover:text-green transition-colors"
           >
             Request Protection
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center min-w-[160px] px-8 py-3.5 border-2 border-white text-white text-sm font-bold tracking-wide uppercase hover:bg-white hover:text-green-deep transition-colors"
-          >
-            Contact Us
           </Link>
         </motion.div>
       </div>

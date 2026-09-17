@@ -1,76 +1,65 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { services } from "@/data/services";
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 sm:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-16 sm:py-20 bg-off-white">
+      <div className="max-w-lg mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center max-w-2xl mx-auto mb-14"
+          className="text-center mb-10"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal uppercase tracking-wide">
-            Our Services
+          <h2 className="text-xl sm:text-2xl font-bold text-charcoal uppercase tracking-[0.1em]">
+            What We Offer
           </h2>
-          <div className="flex items-center justify-center gap-2 mt-4 mb-5">
-            <span className="w-2 h-2 rounded-full bg-green" />
-            <span className="w-2 h-2 rounded-full bg-green" />
-            <span className="w-2 h-2 rounded-full bg-green" />
+          <div className="flex items-center justify-center gap-2 mt-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-green" />
+            <span className="w-1.5 h-1.5 rounded-full bg-green" />
+            <span className="w-1.5 h-1.5 rounded-full bg-green" />
           </div>
-          <p className="text-gray text-base sm:text-lg leading-relaxed">
-            From everyday guarding to specialised protection, Neema delivers
-            professional security built around each client.
-          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="space-y-0 border-t border-black/10">
           {services.map((service, i) => (
-            <motion.article
+            <motion.div
               key={service.slug}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
-              className="group bg-off-white overflow-hidden"
+              transition={{ delay: i * 0.04 }}
             >
-              <Link href={`/services/${service.slug}`} className="block">
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-charcoal uppercase tracking-wide group-hover:text-green transition-colors">
+              <Link
+                href={`/services/${service.slug}`}
+                className="flex items-start gap-4 py-5 border-b border-black/10 group"
+              >
+                <span className="text-green text-xs font-bold tracking-wider pt-0.5 shrink-0">
+                  {service.number}
+                </span>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm font-bold text-charcoal uppercase tracking-wide group-hover:text-green transition-colors">
                     {service.title}
                   </h3>
-                  <p className="mt-2 text-sm text-gray leading-relaxed">
+                  <p className="mt-1 text-sm text-gray leading-relaxed">
                     {service.description}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-green uppercase tracking-wide">
-                    Learn More
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
                 </div>
+                <span className="text-green text-lg shrink-0 group-hover:translate-x-0.5 transition-transform">
+                  ›
+                </span>
               </Link>
-            </motion.article>
+            </motion.div>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-10 text-center">
           <Link
             href="/services"
-            className="inline-flex items-center justify-center px-8 py-3 border-2 border-green text-green text-sm font-bold tracking-wide uppercase hover:bg-green hover:text-white transition-colors"
+            className="inline-flex items-center justify-center px-8 py-3 border border-green text-green text-xs font-bold tracking-[0.12em] uppercase hover:bg-green hover:text-white transition-colors"
           >
             View All Services
           </Link>
